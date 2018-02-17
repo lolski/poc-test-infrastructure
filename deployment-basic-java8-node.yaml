@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basic-java8-node-deployment
+  labels:
+    app: basic-java8-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: basic-java8-node
+  template:
+    metadata:
+      labels:
+        app: basic-java8-node
+    spec:
+      containers:
+      - name: basic-java8-node
+        image: grakn/oracle-java-8
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+          name: http

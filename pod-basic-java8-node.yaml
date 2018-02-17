@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basic-java8-node
+  labels:
+    app: basic-java8-node
+spec:
+  containers:
+    - name: basic-java8-node
+      image: grakn/oracle-java-8
+      ports:
+        - containerPort: 80
+          name: http
